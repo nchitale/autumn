@@ -1,1 +1,33 @@
-p test
+block content
+    .container.mini_overlay
+        h1 COMPANIES
+    .nav.info-bar
+        ul.nav.navbar-nav.navbar-default.indiv-bar
+            li.dropdown(class=title == 'Add-Item' ? 'active' : undefined)
+                a.dropdown-toggle.indiv-drop(href='#', data-toggle='dropdown')
+                    h3 Add Company
+                        i.caret
+                ul.dropdown-menu.drop-wide
+                    .add-item
+                        form(action="/companies", method="post")
+                            input(type="hidden", name="_csrf", value=_csrf)
+                            .form-group
+                                label Name
+                                input.form-control(type="text", name="name")
+                                <br>
+                                label Location
+                                input.form-control(type="text", name="location")
+                                <br>
+                                label URL
+                                input.form-control(type="text", name="url")
+                                <br>
+                            button.btn.btn-defaut(type="submit") Submit
+    if companies && companies.items
+        .col-md-offset-1.container#item
+            each item in companies.items
+                .col-md-3.items
+                    .last-row
+                        .col-md-9
+                            h2 #{item.name}
+
+

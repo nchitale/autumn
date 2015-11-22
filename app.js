@@ -17,6 +17,7 @@ var MongoStore = require('connect-mongo')(session);
 var flash = require('express-flash');
 var path = require('path');
 var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/companiesdb');
 var passport = require('passport');
 var expressValidator = require('express-validator');
 var sass = require('node-sass-middleware');
@@ -118,6 +119,7 @@ app.post('/account/password', passportConf.isAuthenticated, userController.postU
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 app.get('/companies', passportConf.isAuthenticated, companyController.getCompanies);
+app.post('/companies', passportConf.isAuthenticated, companyController.postCompany(app));
 
 /**
  * API examples routes.

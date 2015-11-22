@@ -9,4 +9,5 @@ var companySchema = new mongoose.Schema({
     }]
 });
 
-module.exports = mongoose.model('Company', companySchema);
+var companyModel = mongoose.model('Company', companySchema);
+module.exports = companyModel;
