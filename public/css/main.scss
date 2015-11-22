@@ -71,6 +71,23 @@ footer {
 #about, #partners{
   padding: 5rem;
 }
+#about{
+
+  background-image: url('http://i.dailymail.co.uk/i/pix/2015/09/04/16/2BF0413000000578-3222405-Sanctuary_Although_the_vast_majority_of_Syrian_refugees_live_in_-m-73_1441380822991.jpg');
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
+}
+#about h2{
+
+  font-size: 10rem;
+  color: white;
+
+}
+#about p{
+
+  font-size: 2rem;
+  color: white;
+}
 .home-head{
   background-color: black;
 
@@ -114,4 +131,8 @@ footer {
 }
 .company-title{
   color: black;
+}
+.workerMatch{
+  margin: 5rem;
+  font-size: 3rem;
 }
