@@ -1,27 +1,65 @@
 extends layout
 
+
 block content
-  h1 Hackathon Starter
-  p.lead A boilerplate for Node.js web applications.
+  include partials/home-header
+  .title
+    .overlay
+      h1 WorkerMatch
+      #chart_div
+
+  .overlay#about
+      h2 About Us
+      p.
+        We are a job search portal for refugees from countries around the world arriving in the United States.
+      p.
+        Companies willing to hire refugees can post listings for available jobs.
+      p.
+        Refugees looking for work can search for jobs and find work.
+  .overlay#partners
+      h2 Partners
+
+  p.lead
   hr
-  .row
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
+
+
+
+
+  script(type="text/javascript", src="https://www.google.com/jsapi")
+  script.
+    google.load('visualization', '1', { 'packages': ['map'] });
+    google.setOnLoadCallback(drawMap);
+    function drawMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['Country', 'Population'],
+        ['Afghanistan', 'Afghanistan: 576 Refugees'],
+        ['Armenia', 'Armenia: 9 Refugees'],
+        ['Azerbaijan', 'Azerbaijan: 30 Refugees'],
+        ['Belarus', 'Belarus: 111 Refugees'],
+        ['Bhutan', 'Bhutan: 5320 Refugees'],
+        ['Burma', 'Burma: 18139 Refugees'],
+        ['Burundi', 'Burundi: 2889 Refugees'],
+        ['Cambodia', 'Cambodia: 8 Refugees'],
+        ['Central African Republic', 'Central African Republic: 56 Refugees'],
+        ['Chad', 'Chad: 23 Refugees'],
+        ['China', 'China: 50 Refugees'],
+        ['Colombia', 'Colombia: 94 Refugees'],
+        ['Congo, Democratic Republic', 'Congo, Democratic Republic: 727 Refugees'],
+        ['Congo, Republic', 'Congo, Republic: 197 Refugees'],
+        ['Cuba', 'Cuba: 4177 Refugees'],
+        ['Eritrea', 'Eritrea: 251 Refugees'],
+        ['Estonia', 'Estonia: 6 Refugees'],
+        ['Ethiopia', 'Ethiopia: 299 Refugees'],
+        ['Gambia', 'Gambia: 6 Refugees'],
+        ['Iran', 'Iran: 5270 Refugees'],
+        ['Iraq', 'Iraq: 13823 Refugees'],
+        ['Kazakhstan', 'Kazakhstan: 62 Refugees'],
+        ['Korea, North', 'Korea, North: 37 Refugees'],
+        ['Kyrgyzstan', 'Kyrgyzstan: 25 Refugees'],
+        ['Laos', 'Laos: 59 Refugees'],
+        ['Latvia', 'Latvia: 251 Refugees']
+      ]);
+      var options = { showTip: true };
+      var map = new google.visualization.Map(document.getElementById('chart_div'));
+      map.draw(data, options);
+    };
