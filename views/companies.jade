@@ -1,1 +1,38 @@
-p test
+extends layout
+block content
+    .career-title
+        h1.careers Careers
+        .col-xs-offset-3
+            p.quote "The most common way people give up their power is by thinking they don’t have any."
+            p.quote-name Alice Walker
+    .list-companies
+        table(class='table')
+            thead(class='table-head')
+                tr
+                    td Company Title
+                    td Position Available
+                    td Required English Proficiency
+                    td Minimum Educational Level
+                    td KeyWords
+            tbody
+                tr
+                    td
+                        a(class='company-title' href='/company-profile') Teradata
+                    td 5
+                    td 5/10
+                    td Bachelor's Degree
+                    td Engineering, Computer Science, Data Analytics
+                tr
+                    td
+                        a(class='company-title' href='http://www.toyota.com/?&srchid=sem|google|Brand|Brand_Toyota|Brand_Exact||') Toyota
+                    td 2
+                    td 3/10
+                    td Bachelor's Degree
+                    td Engineering, Mechanical, Cars
+                tr
+                    td
+                        a(class='company-title' href='http://shop.usa.canon.com/shop/en/catalog?gclid=Cj0KEQiAycCyBRDss-D2yIWd_tgBEiQAL-9Rkho0JEL7IjFO8xH39Fz9oWrjLXlEJxTGlPT23X1i1NQaAgtM8P8HAQ&cm_mmc=GA-_-CanonOnlineStore-_-130913Brand%20Paid%20Search-_-canon&Ap=NonProduct%20Specific') Canon
+                    td 5
+                    td 5/10
+                    td Bachelor's Degree
+                    td Engineering, Materials Science, Photography
