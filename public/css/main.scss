@@ -87,3 +87,31 @@ footer {
 .overlay h2{
   margin: 5rem;
 }
+.careers{
+
+  margin-bottom: 4rem;
+  font-size: 10rem;
+}
+.career-title{
+  background-image: url('http://www.etymax.com/wp-content/uploads/2013/07/careers1.jpg');
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
+  z-index: 2;
+  height: 35rem;
+  width: 100%;
+}
+.quote{
+  font-weight: bolder;
+  font-size: 2rem;
+
+}
+.quote-name{
+  position: relative;
+  left: 80%;
+}
+.table-head{
+  font-weight: bold;
+}
+.company-title{
+  color: black;
+}
