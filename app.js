@@ -32,6 +32,7 @@ var contactController = require('./controllers/contact');
 var companyController = require('./controllers/companies');
 // var profileController = require('./controllers/profile');
 
+var companyProfileController = require('./controllers/companyProfile');
 /**
  * API keys and Passport configuration.
  */
@@ -118,6 +119,9 @@ app.post('/account/password', passportConf.isAuthenticated, userController.postU
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 app.get('/companies', passportConf.isAuthenticated, companyController.getCompanies);
+
+//company page
+app.get('/company-profile', companyProfileController.getCompanyProfile);
 
 /**
  * API examples routes.
